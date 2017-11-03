@@ -80,40 +80,6 @@ static char *alts [] =
   "IN", "OUT", "ALT5", "ALT4", "ALT0", "ALT1", "ALT2", "OFF"
 } ;
 
-/* guenter static int physToWpi [64] = 
-{
-  -1,           // 0
-  -1, -1,       // 1, 2
-   8, -1,
-   9, -1,
-   7, 15,
-  -1, 16,
-   0,  1,
-   2, -1,
-   3,  4,
-  -1,  5,
-  12, -1,
-  13,  6,
-  14, 10,
-  -1, 11,       // 25, 26
-  30, 31,	// Actually I2C, but not used
-  21, -1,
-  22, 26,
-  23, -1,
-  24, 27,
-  25, 28,
-  -1, 29,
-  -1, -1,
-  -1, -1,
-  -1, -1,
-  -1, -1,
-  -1, -1,
-  -1, -1,
-  -1, -1,
-  -1, -1, -1, -1, -1, -1, -1, -1, -1
-} ; 
-guenter ende */
-
 // guenter anfang
 static int physToWpi [64] =
 {
@@ -142,41 +108,6 @@ static int physToWpi [64] =
    -1, -1, -1, -1, -1, -1, -1, -1 // 56-> 63
 } ;
 //guenter ende
-
-
-/* guenter static char *physNames [64] = 
-{
-  NULL,
-
-  "   3.3v", "5v     ",
-  "  SDA.1", "5V     ",
-  "  SCL.1", "0v     ",
-  "GPIO. 7", "TxD    ",
-  "     0v", "RxD    ",
-  "GPIO. 0", "GPIO. 1",
-  "GPIO. 2", "0v     ",
-  "GPIO. 3", "GPIO. 4",
-  "   3.3v", "GPIO. 5",
-  "   MOSI", "0v     ",
-  "   MISO", "GPIO. 6",
-  "   SCLK", "CE0    ",
-  "     0v", "CE1    ",
-  "  SDA.0", "SCL.0  ",
-  "GPIO.21", "0v     ",
-  "GPIO.22", "GPIO.26",
-  "GPIO.23", "0v     ",
-  "GPIO.24", "GPIO.27",
-  "GPIO.25", "GPIO.28",
-  "     0v", "GPIO.29",
-       NULL, NULL,
-       NULL, NULL,
-       NULL, NULL,
-       NULL, NULL,
-       NULL, NULL,
-  "GPIO.17", "GPIO.18",
-  "GPIO.19", "GPIO.20",
-   NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,
-} ;	guenter ende */
 
 //guenter orange pi
 static char *physNames [64] = 
@@ -293,14 +224,15 @@ void NanoPiReadAll(void)
 {
   int pin ;
 
-  printf (" +-----+-----+----------+------+---+-NanoPI M1+---+------+----------+-----+-----+\n") ;
+  printf (" +-----+-----+----------+------+---+NanoPI NEO+---+------+----------+-----+-----+\n") ;
   printf (" |  H3 | wPi |   Name   | Mode | V | Physical | V | Mode | Name     | wPi |  H3 |\n") ;
   printf (" +-----+-----+----------+------+---+----++----+---+------+----------+-----+-----+\n") ;
-  for (pin = 1 ; pin <= 40 ; pin += 2)
+  for (pin = 1 ; pin <= 24 ; pin += 2)
     readallPhys (pin, 1) ;
   printf (" +-----+-----+----------+------+---+----++----+---+------+----------+-----+-----+\n") ;
   printf (" |  H3 | wPi |   Name   | Mode | V | Physical | V | Mode | Name     | wPi |  H3 |\n") ;
   printf (" +-----+-----+----------+------+---+-NanoPI M1+---+------+----------+-----+-----+\n") ;	
+/*
   printf ("\n");
   printf (" +-----+----NanoPI M1 Debug UART---+----+\n") ;
   printf (" |  H3 | wPi |   Name   | Mode | V | Ph |\n") ;
@@ -309,6 +241,7 @@ void NanoPiReadAll(void)
     readallPhys (pin, 0) ;
   }
   printf (" +-----+-----+----------+------+---+----+\n") ;
+*/
 }
 //guenter ende
 
