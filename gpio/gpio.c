@@ -36,8 +36,8 @@
 
 #include <wiringPi.h>
 
-#include <gertboard.h>
-#include <piFace.h>
+//#include <gertboard.h>
+//#include <piFace.h>
 
 #include "extensions.h"
 
