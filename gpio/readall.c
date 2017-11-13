@@ -230,9 +230,9 @@ void NanoPiReadAll(void)
   for (pin = 1 ; pin <= 24 ; pin += 2)
     readallPhys (pin, 1) ;
   printf (" +-----+-----+----------+------+---+----++----+---+------+----------+-----+-----+\n") ;
-  printf (" |  H3 | wPi |   Name   | Mode | V | Physical | V | Mode | Name     | wPi |  H3 |\n") ;
-  printf (" +-----+-----+----------+------+---+NanoPI NEO+---+------+----------+-----+-----+\n") ;
-/*
+  // printf (" |  H3 | wPi |   Name   | Mode | V | Physical | V | Mode | Name     | wPi |  H3 |\n") ;
+  // printf (" +-----+-----+----------+------+---+NanoPI NEO+---+------+----------+-----+-----+\n") ;
+
   printf ("\n");
   printf (" +-----+----NanoPI M1 Debug UART---+----+\n") ;
   printf (" |  H3 | wPi |   Name   | Mode | V | Ph |\n") ;
@@ -241,7 +241,7 @@ void NanoPiReadAll(void)
     readallPhys (pin, 0) ;
   }
   printf (" +-----+-----+----------+------+---+----+\n") ;
-*/
+
 }
 //guenter ende
 
