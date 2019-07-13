@@ -35,7 +35,7 @@ CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe
 LDFLAGS	= -L$(DESTDIR)$(PREFIX)/lib
 LIBS    = -lwiringPi -lpthread -lm
 
-# May not need to  alter anything below this line
+# May not need to alter anything below this line
 ###############################################################################
 
 SRC	=	gpio.c extensions.c readall.c pins.c
@@ -65,17 +65,14 @@ tags:	$(SRC)
 .PHONY:	install
 install:
 	@echo "[Install]"
-	@cp gpio		$(DESTDIR)$(PREFIX)/bin
-	@chown root.root	$(DESTDIR)$(PREFIX)/bin/gpio
-	@chmod 4755		$(DESTDIR)$(PREFIX)/bin/gpio
-	@mkdir -p		$(DESTDIR)$(PREFIX)/man/man1
-	@cp gpio.1		$(DESTDIR)$(PREFIX)/man/man1
+	@cp gpio		$(DESTDIR)$(PREFIX)/bin/zuhause-gpio
+	@chown root.root	$(DESTDIR)$(PREFIX)/bin/zuhause-gpio
+	@chmod 4755		$(DESTDIR)$(PREFIX)/bin/zuhause-gpio
 
 .PHONY:	uninstall
 uninstall:
 	@echo "[UnInstall]"
-	@rm -f $(DESTDIR)$(PREFIX)/bin/gpio
-	@rm -f $(DESTDIR)$(PREFIX)/man/man1/gpio.1
+	@rm -f $(DESTDIR)$(PREFIX)/bin/zuhause-gpio
 
 .PHONY:	depend
 depend:
