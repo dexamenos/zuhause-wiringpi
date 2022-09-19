@@ -38,7 +38,7 @@ LIBS    = -lwiringPi -lpthread -lm
 # May not need to alter anything below this line
 ###############################################################################
 
-SRC	=	gpio.c extensions.c readall.c pins.c
+SRC	=	gpio.c extensions.c readall.c readall-parseable.c pins.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -47,7 +47,7 @@ all:		gpio
 gpio:	$(OBJ)
 	@echo [Link]
 	@$(CC) -o $@ $(OBJ) $(LDFLAGS) $(LIBS)
-	
+
 .c.o:
 	@echo [Compile] $<
 	@$(CC) -c $(CFLAGS) $< -o $@
